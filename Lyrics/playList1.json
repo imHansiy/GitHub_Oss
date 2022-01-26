@@ -1,16 +1,14 @@
-{
-  "default": [
-    {
-      "id": "1472480890",
-      "naem": "群青",
-      "url": "https://wyy.nodream.ml//song/url?id=1472480890",
-      "lyrc": "https://wyy.nodream.ml/lyric?id=1472480890"
-    },
-    {
-      "id": "1884490658",
-      "naem": "群青",
-      "url": "https://wyy.nodream.ml//song/url?id=1884490658",
-      "lyrc": "https://wyy.nodream.ml/lyric?id=1884490658"
-    }
-  ]
-}
+[
+  {
+    "id": "1472480890",
+    "naem": "群青",
+    "url": "https://wyy.nodream.ml//song/url?id=1472480890",
+    "lyrc": "https://wyy.nodream.ml/lyric?id=1472480890"
+  },
+  {
+    "id": "1884490658",
+    "naem": "群青",
+    "url": "https://wyy.nodream.ml//song/url?id=1884490658",
+    "lyrc": "https://wyy.nodream.ml/lyric?id=1884490658"
+  }
+]
