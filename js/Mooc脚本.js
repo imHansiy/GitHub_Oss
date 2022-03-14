@@ -138,37 +138,62 @@ function IntoHomework() {
 }
 // 做作业
 function doHomework() {
-  // 题目盒子
-  var questionBox = document.getElementsByClassName('e-q-quest')
-  for (var i = 0; i < questionBox.length; i++) {
-    // 题目类型
-    var type = document.getElementsByClassName('quiz-type')[i].innerText
-    // 问题
-    var child1 = questionBox[i].children[0]
-    var question = child1.innerText
-    // 选项
-    var child2 = questionBox[i].children[1]
-    var options = child2.innerText
+  // 找到浮动面版
+  var flexDiv = document.getElementById('review')
+  flexDiv.style.zIndex = '9999'
+  flexDiv.style.height = '70vh'
+  flexDiv.style.position = 'fixed'
+  flexDiv.style.overflow = 'auto'
+  // 超出显示滚动条
+  flexDiv.style.overflow = 'auto'
+  // 在flexDiv最前面插入一个div
+  var div = document.createElement('div')
+  div.style.width = '100%'
+  div.style.background = 'red'
+  div.innerText = '寻找答案中...'
+  flexDiv.insertBefore(div, flexDiv.firstChild)
+  setTimeout(function () {
+    var href2 = document.documentURI
+    // 题目盒子
+    var questionBox = document.getElementsByClassName('e-q-quest')
+    // 匹配courseOpenId
+    var courseOpenId = href2.match(/courseOpenId=([A-Za-z0-9]*)/)[1]
+    // 匹配workExamId
+    var workExamId = href2.match(/workExamId=([A-Za-z0-9]*)/)[1]
+    // 匹配workExamType
+    var workExamType = href2.match(/workExamType=([A-Za-z0-9]*)/)[1]
     GM_xmlhttpRequest({
-      method: 'POST',
-      url: 'http://s.jiaoyu139.com:886/get?t=ks',
-      data: 'keyword=' + question,
+      method: "POST",
       headers: {
-        'Content-type': 'application/x-www-form-urlencoded',
-        'referer': 'https://mooc1.chaoxing.com/mycourse/studentstudy?chapterId=510503053&courseId=222505636&clazzid=51355489&enc=cf7feb0499161cebc58ba7075ae94990',
-        'v': '3.2',
-        'host': "www.baidu.com"
+        'User-Agent': 'Mozilla/5.0 (Linux; Android 11; Redmi K20 Pro Build/RKQ1.200826.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/98.0.4758.87 Mobile Safari/537.36',
+        'Connection': 'Keep-Alive',
+        'Accept-Encoding': 'gzip',
+        'Content-Type': 'application/x-www-form-urlencoded'
       },
-      timeout: 5000,
+      url: `http://zjy.coolcr.cn/mooc/workExam/preview`,
+      data: `courseOpenId=${courseOpenId}&workExamId=${workExamId}&workExamType=${workExamType}`,
       onload: function (response) {
-        if (response.status == 200) {
-          const data = JSON.parse(response.responseText) || {}
-          console.log(question);
-          console.log(data);
+        // 转为json
+        var resJson = JSON.parse(response.responseText)
+        if (resJson.code != 1) {
+          div.innerText = '没有答案'
+          flexDiv.insertBefore(div, flexDiv.firstChild)
+          return
         }
+        var answer = resJson.relAnswer
+        // 去掉所有标签
+        let reg = /<\/?.+?\/?>/g;
+        answer = answer.replace(reg, '')
+        div.innerText = '作者:梦无念\n博客:https://007666.xyz\n' + answer
+        console.log(answer);
+        flexDiv.insertBefore(div, flexDiv.firstChild)
+      },
+      onerror: function (response) {
+        div.innerText = '题目获取失败'
+        flexDiv.insertBefore(div, flexDiv.firstChild)
       }
     })
-  }
+  }, 1000)
 }
 // 视频学习
 function videoStudy() {
