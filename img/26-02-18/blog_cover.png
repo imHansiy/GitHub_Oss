@@ -1,0 +1,257 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Imgen: generate and hotlink open graph social images</title>
+
+	<meta name="description" content="Generate social images via http-GET API" />
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:site" content="&#64;jitbithelpdesk">
+	<meta name="twitter:title" content="Open Graph Image generator">
+	<meta name="twitter:image" content="https://www.jitbit.com/images/i/EQ6nvah.jpg?1">
+	<meta name="twitter:description" content="Generate social images via http-GET API">
+
+	<meta property="og:site_name" content="jitbit.com">
+	<meta property="og:title" content="Open Graph Image generator">
+	<meta property="og:type" content="product">
+	<meta property="og:image" content="https://www.jitbit.com/images/i/EQ6nvah.jpg?1">
+	<meta property="og:description" content="Generate social images via http-GET API">
+	<style>
+		#header {line-height:180%}
+		#header input[type=text], #header select {width: 90%; box-sizing: border-box; height:35px}
+	</style>
+	<link href="https://www.jitbit.com/imgen/" rel="canonical" />
+			<link rel="alternate" id="rssLink" type="application/rss+xml" title="Jitbit Software" href="https://www.jitbit.com/news/rss/" />
+		<link rel="shortcut icon" href="//www.jitbit.com/favicon.ico" />
+		<link rel="icon" href="/favicon.ico" />
+		<link rel="icon" type="image/png" href="/favicon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="/assets/css/style.min.css?v=9542-5235" />
+		<link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+
+		<link rel="stylesheet" media="print" onload="this.onload=null;this.removeAttribute('media');" href="https://fonts.googleapis.com/css?family=Titillium+Web:400,600&display=swap">
+
+		<script>
+			window.q=[];window.$=function(f){q.push(f)}
+		</script>
+
+		<meta name="slack-app-id" content="AGW609EKZ">
+
+		
+	</head>
+	<body>
+	<div id="header" class="homepage" >
+		<div>
+		<div class="container">
+			<a href="/" id="logo">
+				<img id="cloud" src="/assets/img/logocloud.svg" width="27" alt="Jitbit logo - makers of Jitbit Helpdesk" />
+					<img src="/images/JitBit-white.svg" />
+			</a>
+        
+				<ul id="nav">
+
+					<li id="productsLi">
+						<a title="helpdesk pricing" href="#">More free tools</a>
+						<div id="productsPopup">
+							<ul>
+								<li><a href="/sslcheck/">SSL Check</a></li>
+								<li><a href="/screencapture/">Screen Capture</a></li>
+								<li><a href="/unusedcss/">Unused CSS Finder</a></li>
+								<li><a href="/msg2eml/">Convert MSG to EML</a></li>
+								<li><a href="/listcleaner/">Free email list cleaner</a></li>
+							</ul>
+						</div>
+					</li>
+					<li style="padding-right:0"><a href="/company/">About</a></li>
+				</ul>
+			
+	<div class="row">
+		<h1 style="text-align:center">Generate social cover images<br /> via a simple API</h1>
+
+		<p style="text-align:center">
+			This free tool generates open graph social cover images on the fly and allows hotlinking URLs right from your pages
+		</p>
+
+		<div class="span4 inputs" style="color:white">
+			<input type="text" id="txTitle" value="Hiking for Beginners - 10 Essential Tips From... IBM?" />
+			Background image
+			<input type="text" id="txBackground" value="https://www.jitbit.com/images/i/BwMhcmn.jpg" />
+			Logo image
+			<input type="text" id="txLogo" value="https://www.jitbit.com/images/i/q8puaWj.png" />
+			Font
+			<select id="txFont">
+				<option value="Corbel">Corbel</option>
+				<option value="Georgia">Georgia</option>
+				<option value="Tahoma">Tahoma</option>
+			</select>
+			<br /><br />
+			<div class="buttons">
+				<input type="submit" value="Generate" id="btnGo" class="trynowbutton" />
+			</div>
+		</div>
+		<div class="span8">
+			<img id="ogImage" src="https://imgen.jitbit.com/?bg=https%3A%2F%2Fi.imgur.com%2FBwMhcmn.jpg&txt=Hiking%20for%20Beginners%20-%2010%20Essential%20Tips%20From...%20IBM%3F&logo=https%3A%2F%2Fi.imgur.com%2Fq8puaWj.png" />
+			<br /><br />
+			<input type="text" onclick="this.select()" style="width:100%;background:#ddd" readonly id="txResult" value="https://imgen.jitbit.com/?bg=https%3A%2F%2Fi.imgur.com%2FBwMhcmn.jpg&txt=Hiking%20for%20Beginners%20-%2010%20Essential%20Tips%20From...%20IBM%3F&logo=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F5%2F51%2FIBM_logo.svg%2F200px-IBM_logo.svg.png" />
+		</div>
+	</div>
+
+		</div>
+		</div>
+	</div>
+
+		
+
+
+
+<div class="container content">
+
+	<div class="row">
+		<div class="span12">
+			<pre style="font-size:110%;background:#333;color:#ddd">https://imgen.jitbit.com?bg=<span style="color:#afa">{{ background }}</span>&logo=<span style="color:#afa">{{ logo }}</span>&txt=<span style="color:#afa">{{ title }}</span>&font=Corbel</pre>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="span9">
+			<h3>What is this</h3>
+
+			<p>
+				This tool autogenerates "open graph" social media cover images with a simple GET request to our API.
+				The resulting URL can be later hotlinked in your articles and posts, no need to save/upload the image.
+				The most popular use-case is to embed the URL-generating code right into your CMS backend.
+			</p>
+
+			<script src="https://gist.github.com/alex-jitbit/1f9edfc9a44306bbb7098a57a83d889a.js"></script>
+
+			<h3>Free forever</h3>
+			<p>We will never monetise this.</p>
+
+			<h3>Why so basic</h3>
+			<p>
+				More features coming soon: colors, fonts, sizing, padding, positionig etc.
+			</p>
+
+			<h3>Why even build it</h3>
+
+			<p>The existing free alternatives are sometimes buggy, the existing paid alternatives are sometimes ridiculously overpriced.</p>
+
+			<h3>Tech stack</h3>
+
+			<p>The backend is on ASP.NET Core (because it's <a href="https://devblogs.microsoft.com/aspnet/grpc-performance-improvements-in-net-5/" rel="nofollow">fast</a>), uses "Skia" for image manipulation (portable C++ library from Google), and works behind Cloudflare's caching CDN.</p>
+
+		</div>
+		<div class="span3">
+			<div class="well" style="text-align:center;margin-top:20px;">
+				<h4>Brought to you by</h4>
+				<a href="/saas-helpdesk/">
+					<img style="margin-top: 30px;" src="/assets/img/hostedhelpdesk.png" alt="Help desk software">
+					<h3 style="text-align:center;">Jitbit Helpdesk</h3>
+				</a>
+				<div class="buttons" style="margin-top: 20px">
+					<a class="trynowbutton control-group" style="margin-right:0" href="/saas-helpdesk/">Learn More</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+
+
+
+
+<div id="footer">
+	<div class="container">
+		<div class="row">
+			<div class="span3">
+				<h4>Jitbit Software</h4>
+				<ul>
+				<li>☎ <a href="tel:16463977708">+1 (646) 397-7708</a></li>
+				<li>✉ <a href="mailto:support@jitbit.com">support@jitbit.com</a></li>
+				<li>&nbsp;</li>
+				<li>1312 17th Street<br />Denver, CO 80202, United States</li>
+				</ul>
+			</div>
+			<div class="span3">
+				<h4>About us</h4>
+				<ul>
+				<li><a href="/news/"><b>Blog</b></a></li>
+				<li><a href="/company/">About</a></li>
+				<li><a href="/company/#contact">Contact us</a></li>
+				<li><a href="/support/">Support</a></li>
+				<li><a href="/privacy/">Privacy policy</a></li>
+				<li><a href="/tos/">Terms</a></li>
+				</ul>
+			</div>
+			<div class="span3">
+			<h4>
+				Helpdesk products
+			</h4>
+			<ul>
+				<li><a href="/">Helpdesk ticketing system</a></li>
+				<li><a href="/helpdesk/purchase/">Pricing - self-hosted</a></li>
+				<li><a href="/saas-helpdesk/purchase/">Pricing - hosted</a></li>
+				<li><a href="/saas-helpdesk/">SaaS Helpdesk</a></li>
+			</ul>
+			</div>
+			<div class="span3">
+			<h4>
+				Top features
+			</h4>
+			<ul>
+				<li><a href="/helpdesk/helpdesk-features/">Helpdesk feature list</a></li>
+				<li><a href="/saas-helpdesk/single-sign-on/">Single sign-on</a></li>
+				<li><a href="/docs/api/">API</a></li>
+				<li><a href="/helpdesk/zendesk-vs-jitbit/">Zendesk vs Jitbit vs Spiceworks</a></li>
+			</ul>
+			</div>
+			</div>
+			<div class="row copyright">
+				<div class="span12">
+					<a href="/"><img class="lazyimg" data-original="/assets/img/footerlogo.png" alt="jitbit" /></a>
+					Copyright &copy; 2026 Jitbit
+					&nbsp;
+					<form action="/search/" id="Form2" style="display:inline">
+						<input type="hidden" name="cx" value="partner-pub-1886487233116645:gxcjs2-2fl6" />
+						<input type="hidden" name="cof" value="FORID:11" />
+						<input type="hidden" name="ie" value="UTF-8" />
+						<input name="q" type="text" maxlength="50" placeholder="Search our website..." style="margin:0" />
+					</form>
+				</div>
+			</div>
+	</div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js" defer onload="setTimeout(function(){$.each(q, function (i,f) { $(f) });}, 500)"></script>
+
+
+<script src="/js/utils.js?v=5" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@16.1.0/dist/lazyload.min.js" defer onload="var lzl=new LazyLoad({elements_selector:'.lazyimg',threshold:300,data_src:'original'});"></script>
+
+
+
+	
+	<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=jitbit"></script>
+	<script src="/js/constellation.js?v=4" defer></script>
+	<script>
+		document.getElementById("btnGo").addEventListener("click", function () {
+			var url = "https://imgen.jitbit.com/"
+				+ "?bg=" + encodeURIComponent(document.getElementById("txBackground").value)
+				+ "&txt=" + encodeURIComponent(document.getElementById("txTitle").value)
+				+ "&logo=" + encodeURIComponent(document.getElementById("txLogo").value)
+				+ "&font=" + encodeURIComponent(document.getElementById("txFont").value);
+			document.getElementById("ogImage").src = url;
+			document.getElementById("txResult").value = url;
+		});
+	</script>
+
+
+		<script async defer data-domain="jitbit.com" src="https://plausible.io/js/plausible.js"></script>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TMN3CBH');</script>
+	</body>
+</html>
